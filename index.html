@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=, initial-scale=1.0">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script type="text/javascripts"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
     <link rel="stylesheet"href="https://use.fontawesome.com/releases/v5.0.8/css/solid.css">
@@ -12,6 +13,58 @@
     <title>LOG IN FORM</title>
 </head>
 <body>
+    <script type="text/javascript">
+        $(document).ready(function(){
+            $("#btn").hide();
+            $("#username").keyup(function(){
+                if(validateUsername()){
+                    $("#username").css("border","2px solid green"); 
+                    $("#unameMsg").html("<p class='text-success'>Validated</p>");
+                }else{
+                    $("#username").css("border","2px solid red");
+                    $("#unameMsg").html("<p class='text-danger'>Un-validated</p>");
+                }
+                buttonState();
+            });
+            $("#pass").keyup(function(){
+                if(validatePassword()){
+                    $("#pass").css("border","2px solid green");
+                    $("#passMsg").html("<p class='text-success'>Password validated</p>");
+                }else{
+                    $("#pass").css("border","2px solid red");
+                     $("#passMsg").html("<p class='text-danger'>Password not valid</p>");
+                }
+                buttonState();
+            });
+        });
+    
+        function buttonState(){
+            if(validateUsername() && validatePassword()){
+                $("#btn").show();
+            }else{
+                $("#btn").hide();
+            }
+        }
+        function validateUsername(){
+            var Username=$("#username").val();
+             var reg = /^\w+([-+.']\w+)*@\w+([-.]\w+)*\.\w+([-.]\w+)*$/
+             if(reg.test(Username)){
+                 return true;
+             }else{
+                 return false;
+             }
+    
+        }
+        function validatePassword(){
+            var pass=$("#pass").val();
+            if(pass.length > 8){
+                return true;
+            }else{
+                return false;
+            }
+    
+        }
+    </script>
     <div class="modal-dialog text-center">
         <div class="col-sm-9 main-section">
             <div class="modal-content">
@@ -23,17 +76,25 @@
     <div class="col-12 form-input">
         <form>
             <div class="form-group">
-             <input type="email" class="form-control" placeholder="Username">
+            <label>Enter Username</label>
+             <input type="username" class="form-control" id="uname"placeholder="Username">
+             <span id="unameMsg"></span>
             </div>
             <div class="form-group">
-                <input type="password" class="form-control" placeholder="Password">
+                <label>Enter password</label>
+                <input type="password" class="form-control" id="pass" placeholder="Password">
+                <span id="passMsg"></span>
             </div>
-        <button type="submit" class=" btn btn-primary">Login</button>
+            <div class="checkbox">
+                <input type="checkbox"name="remember"> Remember me</label> 
+            </div>
+        <button type="submit" class=" btn btn-primary">Log in</button>
         </form>
     </div>
     <div class="col-12 link-part">
         <a href="#">Forgot Password?</a>
         </div>
+        <p> Create Account? <a url href="Registration.html"> Sign in</a></p>
     </div>
     </div>
 </body>
