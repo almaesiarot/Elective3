@@ -1,0 +1,62 @@
+@import url("https://fonts.googleapis.com/css?familyBarlow+Semi+Codensed");
+
+body{
+    font-family: 'Barlow Semi-Condensed',sans-serif;
+    background: url(img/background.jpeg.jpg) no-repeat center center fixed;
+    background-size: cover;
+}
+.user-img{
+    margin-top: -50px;   
+    border-radius: 10px;
+}
+.user-img img{
+    height: 100px;
+    width: 100px;
+    border-radius: 85%;
+}
+.main-section{
+    margin: 0 auto;
+    margin-top: 80px;
+    padding: 0;
+}
+.modal-content{
+    background-color: #34495e;
+    opacity: .75;
+}
+.user-name{
+    margin: 4px 0;
+}
+.user-name h1{
+    font-size:20px;
+    color:black;
+}
+.form-input button{
+    width: 60%;
+    margin-bottom: 20px;
+}
+.form-group{
+    width: 85%;
+    margin-left: 20px;
+    margin-top: 10px;
+    margin-bottom: -9px;
+    padding: -5px;
+}
+.btn-primary{
+    background-color:#2ecc71 ;
+    border: 1px solid #2ecc71;
+}
+.btn-primary:hover{
+    background-color:#27ae60;
+    border: 1px solid #27ae60;
+}
+.checkbox{
+    margin-top: 10px;
+    margin-left: -45%;
+}
+.link-part{
+    padding: 0px;
+    border-radius: 0 0 4px 4px;
+    border-top: 1px solid #c2c2c2;
+    margin-top: -10px;
+    background-color: #34495e;
+}
